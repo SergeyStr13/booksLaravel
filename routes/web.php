@@ -10,7 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use \Illuminate\Http\Request;
+use App\Book;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/books', function () {
+    return view('books');
+});
+
+
+Route::post('/book', function (Request $request) {});
+
+Route::delete('/book/{book}', function (Book $book) {});
