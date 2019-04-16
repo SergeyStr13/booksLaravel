@@ -19,10 +19,31 @@ Route::get('/', function () {
 
 
 Route::get('/books', function () {
-    return view('books');
+	$books = Book::all();
+    return view('books', compact('books'));
 });
 
 
-Route::post('/book', function (Request $request) {});
+Route::post('/bookAdd', function (Request $request) {
+	$validator = Validator::make($request->all(),
+		['title' => 'required|max:255']);
 
-Route::delete('/book/{book}', function (Book $book) {});
+	if ($validator->fails()) {
+		return redirect('/books')->withInput()->withErrors($validator);
+	}
+	//var_dump($request);
+	// create new book
+	$book = new Book();
+	$book->title = $request->title;
+	$book->author = $request->author;
+	$book->description = $request->description;
+
+	$book->save();
+	return redirect('/books');
+});
+
+Route::get('/bookDelete/{book}', function (Book $book) {
+	$book->delete();
+	return redirect('/books');
+
+});

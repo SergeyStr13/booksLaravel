@@ -9,7 +9,9 @@
   <body>
     <div class="container">
       <nav class="navbar navbar-default">
-        <!-- Содержимое Navbar -->
+        <!--  -->
+		  <li><a href="#">Книги</a></li>
+		  <li><a href="#">Пользователи</a></li>
       </nav>
     </div>
 
