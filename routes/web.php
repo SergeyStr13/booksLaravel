@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 
 Route::get('/books', function () {
 	$books = Book::all();
@@ -33,10 +37,10 @@ Route::post('/bookAdd', function (Request $request) {
 	}
 	//var_dump($request);
 	// create new book
-	$book = new Book();
-	$book->title = $request->title;
+	$book = new Book($request->all());
+	/*$book->title = $request->title;
 	$book->author = $request->author;
-	$book->description = $request->description;
+	$book->description = $request->description;*/
 
 	$book->save();
 	return redirect('/books');

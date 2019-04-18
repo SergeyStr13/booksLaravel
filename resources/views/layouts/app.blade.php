@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Laravel Quickstart - Basic</title>
+	<head>
+		<title>Laravel Books - Basic</title>
 
-    <!-- CSS и JavaScript -->
-  </head>
+		<!-- CSS и JavaScript -->
+		<link href="/public/bootstrap4/css/bootstrap.css">
+		<script src="/public/bootstrap4/js/bootstrap.js"></script>
+	</head>
 
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-default">
-        <!--  -->
-		  <li><a href="#">Книги</a></li>
-		  <li><a href="#">Пользователи</a></li>
-      </nav>
-    </div>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!--  -->
+				<ul>
+					<li><a href="#">Книги</a></li>
+					<li><a href="#">Пользователи</a></li>
+				</ul>
+			</nav>
+		</div>
 
-    @yield('content')
-  </body>
+		@yield('content')
+	</body>
 </html>

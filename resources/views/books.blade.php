@@ -20,7 +20,7 @@
 
 	<form action="{{ url('/bookAdd')}}" method="post">
 		{{ csrf_field() }}
-		<div>
+		<div >
 			<label>Книга</label>
 			<input type="text" name="title" id="title" class="">
 			<input type="text" name="description" id="description" class="">
