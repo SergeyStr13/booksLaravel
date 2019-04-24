@@ -21,6 +21,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/autoService', function () {
+    return view('autoService');
+});
+
 
 Route::get('/books', function () {
 	$books = Book::all();
