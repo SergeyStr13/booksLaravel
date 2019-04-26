@@ -25,6 +25,9 @@ Route::get('/autoService', function () {
     return view('autoService');
 });
 
+Route::get('/testHtmlTag', function () {
+    return view('testHtmlTag');
+});
 
 Route::get('/books', function () {
 	$books = Book::all();
