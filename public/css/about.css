@@ -6,7 +6,7 @@
 }
 
 .navbar {
-	background: #f97300;
+	background: #0b51f9;
 }
 
 .navbar-brand, .nav-link {
@@ -20,7 +20,7 @@
 
 .nav-link:hover {
 	background: #f4f4f4;
-	color: #f97300;
+	color: #084ef9;
 }
 
 .navbar-collapse {
@@ -51,7 +51,7 @@
 }
 
 .description h1{
- 	color:#F97300 ;
+ 	color: #0f48f9;
 }
 .description p{
 	color:#666;
@@ -61,8 +61,8 @@
 }
 
 .description button{
-	border:1px  solid #F97300;
-	background:#F97300;
+	border:1px  solid #002ef9;
+	background: #1e39f9;
 	color:#fff;
 }
 
@@ -73,7 +73,7 @@
 	position: relative;
 }
 .about h1 {
-	color:#F97300;
+	color: #0351f9;
 	margin: 2em;
 }
 .about img {
@@ -106,7 +106,7 @@
 	position: relative;
 }
 .portfolio h1 {
-	color:#F97300;
+	color: #113bf9;
 	margin: 2em;
 }
 .portfolio img {
@@ -122,13 +122,13 @@
 }
 .contact-form h1 {
 	padding:2em 1px;
-	color: #F97300;
+	color: #0057f9;
 }
 	.contact-form .right {
 	max-width: 600px;
 }
 .contact-form .right .btn-secondary {
-	background:  #F97300;
+	background: #3e50f9;
 	color: #fff;
 	border:0;
 }
