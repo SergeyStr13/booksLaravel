@@ -58,3 +58,8 @@ Route::get('/bookDelete/{book}', function (Book $book) {
 	return redirect('/books');
 
 });
+Auth::routes(
+
+);
+
+Route::get('/home', 'HomeController@index');

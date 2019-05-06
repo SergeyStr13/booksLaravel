@@ -42,7 +42,7 @@
 			<div class="progress-bar-striped w-50"  role="progressbar"  aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
 		</div>
 
-		<div class="alert alert-dark alert-dismissible fade show">Прочитат сообщения
+		<div class="alert alert-dark alert-dismissible fade show">Прочитать сообщения
 			<button type="button" class="close" data-dismiss="alert">
 				<span >&times;</span>
 			</button>
