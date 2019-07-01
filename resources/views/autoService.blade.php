@@ -17,66 +17,7 @@
 	<div class="container">
 		<div class="row">
 			<h1>Автосервис "Южный порт"</h1>
-			{{--<div>
-				<i>Разрабатывается</i>
-			</div>--}}
-			<div class="clearfix visible-lg">scdsdasc</div>
 		</div>
-
-		<button type="button" class="btn btn-outline-primary countF">
-			Прочитано
-			<span class="badge badge-danger">5</span>
-			<span class="sr-only">непрочитанных сообщений</span>
-		</button>
-
-		<div class="container">
-
-			<blockquote>
-				Приезжает в автосервис дама… К ней подходит мастер: - Что случилось? Чем мы можем помочь? - Да, похоже с бендиксом проблемы… Стартер срабатывает через раз… Мастер уважительно смотрит на даму и подробно вписывает её претензию в наряд-заказ… - Что-нибудь ещё? Дама задумалась… - Ну… выхлопную трубу ещё посмотрите… Мастер озабоченно: - А с ней что? Дама: - Да что-то я её давно не видела…
-				Источник: https://mislitel.info/category/505-avtoservis
-				© Мыслитель.инфо
-			</blockquote>
-
-		</div>
-		<div class="progress bg-primary">
-			<div class="progress-bar-striped w-50"  role="progressbar"  aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-		</div>
-
-		<div class="alert alert-dark alert-dismissible fade show">Прочитать сообщения
-			<button type="button" class="close" data-dismiss="alert">
-				<span >&times;</span>
-			</button>
-		</div>
-
-		<nav >
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item">Home</li>
-				<li class="breadcrumb-item">Contact</li>
-				<li class="breadcrumb-item active">Address</li>
- 			</ol>
-		</nav>
-
-		<table class="table table-striped table-bordered table-hover">
-			<thead>
-				<tr>
-					<th scope="col">Услуга</th>
-					<th scope="col">Описание</th>
-					<th scope="col">Цена</th>
-				</tr>
-			</thead>
-			<tbody class="">
-				<tr>
-					<td>Ремонт двигателя</td>
-					<td>Ремонт двигателей любой сложности</td>
-					<td>5000 р.</td>
-				</tr>
-				<tr>
-					<td>Ремонт коробки</td>
-					<td>Ремонт коробок АПП, Автомат любой сложности</td>
-					<td>30000 р.</td>
-				</tr>
-			</tbody>
-		</table>
 	</div>
 </body>
 {{--

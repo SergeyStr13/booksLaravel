@@ -28,12 +28,13 @@ Route::get('/autoService', function () {
 Route::get('/testHtmlTag', function () {
     return view('testHtmlTag');
 });
-
+/*
 Route::get('/books', function () {
 	$books = Book::all();
     return view('books', compact('books'));
-});
+});*/
 
+Ro
 
 Route::post('/bookAdd', function (Request $request) {
 	$validator = Validator::make($request->all(),
