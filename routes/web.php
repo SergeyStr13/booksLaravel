@@ -28,39 +28,29 @@ Route::get('/autoService', function () {
 Route::get('/testHtmlTag', function () {
     return view('testHtmlTag');
 });
-/*
-Route::get('/books', function () {
-	$books = Book::all();
-    return view('books', compact('books'));
-});*/
 
-Ro
+Route::get('/books', 'BookController@bookAll');
+Route::post('/bookAdd', 'BookController@add');
 
-Route::post('/bookAdd', function (Request $request) {
+/*Route::post('/bookAdd', function (Request $request) {
 	$validator = Validator::make($request->all(),
-		['title' => 'required|max:255']);
+		['title' => 'required|max:255']
+	);
 
 	if ($validator->fails()) {
 		return redirect('/books')->withInput()->withErrors($validator);
 	}
-	//var_dump($request);
-	// create new book
 	$book = new Book($request->all());
-	/*$book->title = $request->title;
-	$book->author = $request->author;
-	$book->description = $request->description;*/
-
 	$book->save();
 	return redirect('/books');
-});
+});*/
 
 Route::get('/bookDelete/{book}', function (Book $book) {
 	$book->delete();
 	return redirect('/books');
 
 });
-Auth::routes(
-
-);
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('articles', 'ArticleController');
