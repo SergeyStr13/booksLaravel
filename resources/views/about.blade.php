@@ -12,7 +12,7 @@
 
 	<body>
 		<nav class="navbar navbar-expand-lg fixed-top">
-			<a href="#" class="navbar-brand">Главная</a>
+			<a href="#" class="navbar-b rand">Главная</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 			        data-target="#navbarContent" aria-controls="navbarContent"
 			        aria-expanded="false" aria-label="Toggle">

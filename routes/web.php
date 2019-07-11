@@ -32,6 +32,8 @@ Route::get('/testHtmlTag', function () {
 Route::get('/books', 'BookController@bookAll');
 Route::post('/bookAdd', 'BookController@add');
 
+Route::post('/insertG', 'BookController@insertG');
+
 /*Route::post('/bookAdd', function (Request $request) {
 	$validator = Validator::make($request->all(),
 		['title' => 'required|max:255']
