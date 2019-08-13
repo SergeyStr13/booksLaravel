@@ -25,6 +25,7 @@
 			<input type="text" name="title" id="title" class="">
 			<input type="text" name="description" id="description" class="">
 			<input type="text" name="author" id="author" class="">
+			<input type="file" name="link" id="link" class="">
 		</div>
 
 		<div>
@@ -40,6 +41,8 @@
 				<th>Название</th>
 				<th>Авторы</th>
 				<th>Описание</th>
+				<th>Файл</th>
+
 				<th></th>
 			</tr>
 			@foreach($books as $book)
@@ -47,6 +50,7 @@
 					<td>{{$book->title}}</td>
 					<td>{{$book->author}}</td>
 					<td>{{$book->description}}</td>
+					<td>{{$book->link}}</td>
 					<td><a href="/bookDelete/{{$book->id}}">Удалить</a></td>
 				</tr>
 			@endforeach
