@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Http\File;
 
 /**
+ * @property int $id
  * @property string $title
  * @property string $author
  * @property string $description

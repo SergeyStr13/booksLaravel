@@ -30,6 +30,7 @@ Route::get('/testHtmlTag', function () {
 });
 
 Route::get('/books', 'BookController@bookAll');
+Route::get('/download/{id}', 'BookController@download');
 Route::post('/bookAdd', 'BookController@add');
 
 Route::post('/insertG', 'BookController@insertG');

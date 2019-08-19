@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 
 use App\Book;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Validator;
@@ -21,31 +22,72 @@ class BookController extends Controller {
 
 	public function bookAll() {
 		$books = Book::all();
-		//dump($books->createId);
-		return view('books', compact('books'));
+		$link = '';
+		//$linkBook = Storage::get($books->link);
+		//$content = File::get('storage/app'.$books->link);
+		//dump($content);
+		/*$link = Storage::get($books->link);
+
+		var_dump($link);
+		exit();*/
+		//$link = Storage::getFacadeRoot();
+		$link = Storage::url('3b35dcec1a5ed7f4227fb61f52b5d815.jpeg');
+		var_dump($link);
+		//exit();
+
+
+		return view('books', compact('books', 'link'));
 	}
 
 	public function add(Request $request) {
 		$books = $request->all();
 
 		if ($books) {
-
+			$books['link'] = '';
 			$book = new Book($books);
-			//dump($book);
 
 			$book->save();
-			$link =  $request->file('link');
-			dump($link);
+			$lastId = $book->id;
+			$ext = $request->file('link')->extension();
 
-			Storage::disk('local')->put($book->link, $link);
+			$filenameId = $lastId.'.'.$ext;
+			$book->link = $filenameId;
 
+			$book->update(['link', $request->file('link')->getClientOriginalName()]);
+
+
+
+			if ($request->hasFile('link')) {
+				/** @var File $link */
+				//$link =  $request->file('link')->isValid;
+				$path = $request->file('link')->path();
+				$ext = $request->file('link')->extension();
+				$filename = $request->file('link');
+				$request->file('link')->storeAs('/public/books/', $filenameId);
+
+				dump($path);
+				dump($ext);
+				dump($filename);
+				//exit;
+
+				//$content = File::get('storage/app'.$link);
+				//dump($content);
+			}
+
+			//$content = $request->file('link')->getRealPath();
+			//dump($content);
+			//Storage::disk('local')->put($request->link, 'Content');
 		} else {
 			throw new \LogicException("Запрос пустой");
 		}
+		return redirect('/books');
+	}
 
-		/*dump($book);
-		exit();*/
+	public function download(Request $request) {
 
+		$id = $request->get('id');
+
+		dump($id);
 
 		return redirect('/books');
 	}

@@ -18,7 +18,7 @@
 	  </div>
 	@endif
 
-	<form action="{{ url('/bookAdd')}}" method="post">
+	<form action="{{ url('/bookAdd')}}" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<div>
 			<label>Книга</label>
@@ -47,11 +47,12 @@
 			</tr>
 			@foreach($books as $book)
 				<tr>
-					<td>{{$book->title}}</td>
-					<td>{{$book->author}}</td>
-					<td>{{$book->description}}</td>
-					<td>{{$book->link}}</td>
-					<td><a href="/bookDelete/{{$book->id}}">Удалить</a></td>
+					<td width="200px">{{$book->title}}</td>
+					<td width="200px">{{$book->author}}</td>
+					<td width="200px">{{$book->description}}</td>
+					<td width="200px"><a href="{{ $link }}">{{$book->link}}</a></td>
+					<td><a href="/books/download/{{$book->id}}">Загрузить</a></td>
+					<td><a href="/bookDelete/{{ $book->id }}">Удалить</a></td>
 				</tr>
 			@endforeach
 		</table>
