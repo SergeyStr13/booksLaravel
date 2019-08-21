@@ -31,11 +31,9 @@ class BookController extends Controller {
 		var_dump($link);
 		exit();*/
 		//$link = Storage::getFacadeRoot();
-		$link = Storage::url('3b35dcec1a5ed7f4227fb61f52b5d815.jpeg');
+		$link = Storage::url($books->last()->link);
 		var_dump($link);
 		//exit();
-
-
 		return view('books', compact('books', 'link'));
 	}
 
@@ -47,29 +45,22 @@ class BookController extends Controller {
 			$book = new Book($books);
 
 			$book->save();
-			$lastId = $book->id;
+			/*$lastId = $book->id;
 			$ext = $request->file('link')->extension();
-
 			$filenameId = $lastId.'.'.$ext;
-			$book->link = $filenameId;
-
-			$book->update(['link', $request->file('link')->getClientOriginalName()]);
-
-
-
+			$book->link = $filenameId;*/
+			//$book->update(['link', $request->file('link')->getClientOriginalName()]);
 			if ($request->hasFile('link')) {
 				/** @var File $link */
 				//$link =  $request->file('link')->isValid;
-				$path = $request->file('link')->path();
+				/*$path = $request->file('link')->path();
 				$ext = $request->file('link')->extension();
-				$filename = $request->file('link');
-				$request->file('link')->storeAs('/public/books/', $filenameId);
+				$filename = $request->file('link');*/
+				$link = $request->file('link')->store('/books');
+				$book->update([ 'link' => $link]);
 
-				dump($path);
-				dump($ext);
-				dump($filename);
-				//exit;
 
+				dump($book);
 				//$content = File::get('storage/app'.$link);
 				//dump($content);
 			}
@@ -83,9 +74,20 @@ class BookController extends Controller {
 		return redirect('/books');
 	}
 
-	public function download(Request $request) {
+	public function update(Request $request, $id) {
+		//$idBook = $request->get('id');
+		$book = Book::findOrFail($id);
 
-		$id = $request->get('id');
+		if ($request->isMethod('post')) {
+			$book->update();
+		}
+
+
+
+		return redirect('/books');
+	}
+
+	public function download(Request $request, $id) {
 
 		dump($id);
 

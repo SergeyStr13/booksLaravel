@@ -1,4 +1,4 @@
-
+<?php /** @var \App\Book[] $books */?>
 @extends('layouts.app')
 
 @section('content')
@@ -18,23 +18,9 @@
 	  </div>
 	@endif
 
-	<form action="{{ url('/bookAdd')}}" method="post" enctype="multipart/form-data">
-		{{ csrf_field() }}
-		<div>
-			<label>Книга</label>
-			<input type="text" name="title" id="title" class="">
-			<input type="text" name="description" id="description" class="">
-			<input type="text" name="author" id="author" class="">
-			<input type="file" name="link" id="link" class="">
-		</div>
-
-		<div>
-			<button type="submit">Добавить</button>
-		</div>
-	</form>
-
 	<div style="clear: both"></div>
-	<div class="books" style="">
+	<div class="container books" style="">
+
 		<table>
 			<caption>Список книг</caption>
 			<tr>
@@ -47,10 +33,11 @@
 			</tr>
 			@foreach($books as $book)
 				<tr>
-					<td width="200px">{{$book->title}}</td>
-					<td width="200px">{{$book->author}}</td>
-					<td width="200px">{{$book->description}}</td>
-					<td width="200px"><a href="{{ $link }}">{{$book->link}}</a></td>
+					<td>{{$book->title}}</td>
+					<td>{{$book->author}}</td>
+					<td>{{$book->description}}</td>
+					<td><a href="{{ $link }}">{{$book->originNameLink}}</a></td>
+					<td><a href="/books/update/{{$book->id}}">Редактировать</a></td>
 					<td><a href="/books/download/{{$book->id}}">Загрузить</a></td>
 					<td><a href="/bookDelete/{{ $book->id }}">Удалить</a></td>
 				</tr>
