@@ -17,9 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/home', 'HomeController@index');
+
+
+
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/autoService', function () {
     return view('autoService');
@@ -55,6 +61,6 @@ Route::get('/bookDelete/{book}', function (Book $book) {
 
 });
 
-Route::get('/home', 'HomeController@index');
+/*Route::get('/home', 'HomeController@index');*/
 
 Route::resource('articles', 'ArticleController');

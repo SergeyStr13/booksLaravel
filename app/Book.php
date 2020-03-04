@@ -6,21 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Http\File;
 
-
-//  @property string $createId
 /**
  * App\Book
  *
  * @property int $id
  * @property string $title
  * @property string $description
- * @property string $author
+ * @property string $authors
  * @property int $createId
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property string $link
  * @property string $originNameLink
- * @method static \Illuminate\Database\Query\Builder|\App\Book whereAuthor($value)
+ * @property-read \App\User $user
+ * @method static \Illuminate\Database\Query\Builder|\App\Book whereAuthors($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Book whereCreateId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Book whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Book whereDescription($value)
@@ -35,11 +34,11 @@ class Book extends Model {
 
 	protected $table = 'book';
 
-	protected $fillable = ['title', 'author', 'description', 'link'];
+	protected $fillable = ['title', 'authors', 'description', 'link'];
 
 	//public $timestamps = false;
 
-	/*public function createId() {
-		return $this->hasOne('App\User');
-	}*/
+	public function user() {
+		return $this->belongsTo(User::class, 'createId');
+	}
 }

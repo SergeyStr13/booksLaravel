@@ -27,6 +27,7 @@
 				<th>Название</th>
 				<th>Авторы</th>
 				<th>Описание</th>
+				<th>Создан</th>
 				<th>Файл</th>
 
 				<th></th>
@@ -34,8 +35,9 @@
 			@foreach($books as $book)
 				<tr>
 					<td>{{$book->title}}</td>
-					<td>{{$book->author}}</td>
+					<td>{{$book->authors}}</td>
 					<td>{{$book->description}}</td>
+					<td>{{$book->user->name}}</td>
 					<td><a href="{{ $link }}">{{$book->originNameLink}}</a></td>
 					<td><a href="/books/update/{{$book->id}}">Редактировать</a></td>
 					<td><a href="/books/download/{{$book->id}}">Загрузить</a></td>
